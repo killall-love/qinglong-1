@@ -254,7 +254,7 @@ update_qinglong() {
     local no_restart="$1"
     echo -e "--------------------------------------------------------------\n"
     [ -f $dir_root/package.json ] && ql_depend_old=$(cat $dir_root/package.json)
-    reset_romote_url ${dir_root} "${github_proxy_url}https://github.com/whyour/qinglong.git"
+    reset_romote_url ${dir_root} "${github_proxy_url}https://github.com/Tsukasa007/qinglong.git"
     git_pull_scripts $dir_root
 
     if [[ $exit_status -eq 0 ]]; then
@@ -269,7 +269,7 @@ update_qinglong() {
         echo -e "\n更新$dir_root失败，请检查原因...\n"
     fi
 
-    local url="${github_proxy_url}https://github.com/whyour/qinglong-static.git"
+    local url="${github_proxy_url}https://github.com/Tsukasa007/qinglong-static.git"
     if [ -d ${ql_static_repo}/.git ]; then
         reset_romote_url ${ql_static_repo} ${url}
         cd ${ql_static_repo}
@@ -302,7 +302,7 @@ update_qinglong() {
 
 reload_pm2() {
     pm2 l >/dev/null 2>&1
-    
+
     if [[ $(pm2 info panel 2>/dev/null) ]]; then
         pm2 reload panel >/dev/null 2>&1
     else
