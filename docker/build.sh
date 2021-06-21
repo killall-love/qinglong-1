@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker build -t whyour/qinglong:latest .
+docker build -t Tsukasa007/qinglong:2.2.0 .
